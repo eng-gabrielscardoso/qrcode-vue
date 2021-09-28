@@ -10,7 +10,7 @@ app.get('/', (req, res, next) => {
     res.sendFile('/public/index.html');
 })
 
-app.listen(pont, () => {
+app.listen(port, () => {
     try{
         console.log(`Server running: http://127.0.0.1:${port}/`);
     } catch(e) {

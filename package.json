@@ -2,7 +2,7 @@
   "name": "qrcode-vue",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "src/main.js",
   "scripts": {
     "start": "nodemon"
   },
