@@ -12,20 +12,7 @@
     <title>QRCode Vue</title>
 </head>
 <body>
-    <div id="app" class="container">
-        <div class="row mt-3">
-            <h1 class="title">{{title}}</h1>
-            <form>
-                <div class="form-group">
-                    <label for="target">Informe o texto ou URL:</label>
-                    <input class="form-control" type="text" name="target" id="target" v-model="target">
-                </div>
-            </form>
-            <div class="qrcode m-3 " v-if="target">
-                <img :src="generateQRCode" :alt="target" :title="target">
-            </div>
-        </div>
-    </div>
+    <div id="app"></div>
 
     <!-- Libs and Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
