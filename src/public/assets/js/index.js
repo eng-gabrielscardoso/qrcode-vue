@@ -1,14 +1,16 @@
 new Vue({
     el: '#app',
-    template: `
-    
-    `,
     data: function() {
         return {
-
+            title: 'Gerador de QRCode',
+            target: 'https://github.com/eng-gabrielscardoso/',
+            qrious: new QRious({size: 300})
         };
     },
-    methods: {
-        
+    computed: {
+        generateQRCode() {
+            this.qrious.value = this.target;
+            return this.qrious.toDataURL();
+        }
     }
 })
