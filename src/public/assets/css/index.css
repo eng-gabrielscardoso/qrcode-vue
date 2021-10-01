@@ -39,7 +39,19 @@ form input{
 }
 
 .qrcode{
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+}
+
+.qrcode > * {
+    padding-bottom: 10px;
+}
+
+.qrcode > button{
+    max-width: 150px;
 }
 
 #btnDarkMode{
