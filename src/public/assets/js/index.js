@@ -3,7 +3,7 @@ new Vue({
     template: `
         <div id="app" :class="background">
             <div class="container">
-                <div class="title pt-3 pb-2">
+                <div class="title pb-2">
                     <h1 :class="color">{{title}}</h1>
                 </div>
                     <div class="form-group">
