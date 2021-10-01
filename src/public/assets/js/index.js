@@ -5,7 +5,7 @@ new Vue({
             <div class="container pt-3">
                 <div class="title">
                     <h1 :class="color">{{title}}</h1>
-                    <button type="button" :class="btnColor" @click="darkMode"><i :class="btnIcon" aria-hidden="true"></i></button>
+                    <button type="button" :class="btnBorder + ' ' + btnColor" @click="darkMode"><i :class="btnIcon" aria-hidden="true"></i></button>
                 </div>
                     <div class="form-group">
                         <label for="target" :class="color">Informe o texto ou URL:</label>
@@ -25,6 +25,7 @@ new Vue({
             qrious: new QRious({size: 300}),
             color: 'text-dark',
             background: 'bg-light',
+            btnBorder: 'border border-dark',
             btnColor: 'btn btn-light',
             btnIcon: 'fa fa-sun-o'
         };
@@ -39,6 +40,7 @@ new Vue({
         darkMode() {
             this.color == 'text-dark' ? this.color = 'text-light' : this.color = 'text-dark';
             this.background == 'bg-light' ? this.background = 'bg-dark' : this.background = 'bg-light';
+            this.btnBorder == 'border border-dark' ? this.btnBorder = 'border border-light' : this.btnBorder = 'border border-dark';
             this.btnColor == 'btn btn-light' ? this.btnColor = 'btn btn-dark' : this.btnColor = 'btn btn-light';
             this.btnIcon == 'fa fa-sun-o' ? this.btnIcon = 'fa fa-moon-o' : this.btnIcon = 'fa fa-sun-o';
         }
