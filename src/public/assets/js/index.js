@@ -2,20 +2,20 @@ new Vue({
     el: '#app',
     template: `
         <div id="app" :class="background">
-            <div class="container pt-3">
-                <div class="title">
+            <div class="container">
+                <div class="title pt-3 pb-2">
                     <h1 :class="color">{{title}}</h1>
-                    <button type="button" :class="btnBorder + ' ' + btnColor" @click="darkMode"><i :class="btnIcon" aria-hidden="true"></i></button>
                 </div>
                     <div class="form-group">
                         <label for="target" :class="color">Informe o texto ou URL:</label>
                         <input class="form-control text-dark bg-light" type="text" name="target" id="target" v-model="target">
                     </div>
                 </form>
-                <div class="qrcode m-3 " v-if="target">
+                <div class="qrcode pt-4" v-if="target">
                     <img :src="generateQRCode" :alt="target" :title="target">
                 </div>
             </div> 
+            <button type="button" :class="btnBorder + ' ' + btnColor" id="btnDarkMode" @click="darkMode"><i :class="btnIcon" aria-hidden="true"></i></button>
         </div>
     `,
     data: function() {

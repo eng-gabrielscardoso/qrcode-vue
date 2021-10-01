@@ -14,16 +14,7 @@ html,body{
 }
 
 .title{
-    display: flex;
-    flex-wrap: nowrap;
-    flex-grow: content;
-    align-items: center;
-    justify-content: center;
     text-align: center;
-}
-
-.title > * {
-    margin: 0 10px;
 }
 
 .form-group,
@@ -40,4 +31,10 @@ form input{
 
 .qrcode{
     text-align: center;
+}
+
+#btnDarkMode{
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
 }
