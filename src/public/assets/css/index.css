@@ -9,8 +9,21 @@ html,body{
     overflow-x: hidden;
 }
 
+#app{
+    height: 100vh;
+}
+
 .title{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-grow: content;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+}
+
+.title > * {
+    margin: 0 10px;
 }
 
 .form-group,

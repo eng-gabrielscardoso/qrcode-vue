@@ -1,30 +1,46 @@
 new Vue({
     el: '#app',
     template: `
-        <div class="container mt-3">
-            <h1 class="title">{{title}}</h1>
-            <form>
-                <div class="form-group">
-                    <label for="target">Informe o texto ou URL:</label>
-                    <input class="form-control" type="text" name="target" id="target" v-model="target">
+        <div id="app" :class="background">
+            <div class="container pt-3">
+                <div class="title">
+                    <h1 :class="color">{{title}}</h1>
+                    <button type="button" :class="btnColor" @click="darkMode"><i :class="btnIcon" aria-hidden="true"></i></button>
                 </div>
-            </form>
-            <div class="qrcode m-3 " v-if="target">
-                <img :src="generateQRCode" :alt="target" :title="target">
-            </div>
+                    <div class="form-group">
+                        <label for="target" :class="color">Informe o texto ou URL:</label>
+                        <input class="form-control text-dark bg-light" type="text" name="target" id="target" v-model="target">
+                    </div>
+                </form>
+                <div class="qrcode m-3 " v-if="target">
+                    <img :src="generateQRCode" :alt="target" :title="target">
+                </div>
+            </div> 
         </div>
     `,
     data: function() {
         return {
             title: 'Gerador de QRCode',
             target: 'https://github.com/eng-gabrielscardoso/',
-            qrious: new QRious({size: 300})
+            qrious: new QRious({size: 300}),
+            color: 'text-dark',
+            background: 'bg-light',
+            btnColor: 'btn btn-light',
+            btnIcon: 'fa fa-sun-o'
         };
     },
     computed: {
         generateQRCode() {
             this.qrious.value = this.target;
             return this.qrious.toDataURL();
+        }
+    },
+    methods: {
+        darkMode() {
+            this.color == 'text-dark' ? this.color = 'text-light' : this.color = 'text-dark';
+            this.background == 'bg-light' ? this.background = 'bg-dark' : this.background = 'bg-light';
+            this.btnColor == 'btn btn-light' ? this.btnColor = 'btn btn-dark' : this.btnColor = 'btn btn-light';
+            this.btnIcon == 'fa fa-sun-o' ? this.btnIcon = 'fa fa-moon-o' : this.btnIcon = 'fa fa-sun-o';
         }
     }
 })
