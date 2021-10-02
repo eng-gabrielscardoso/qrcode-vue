@@ -47,7 +47,7 @@ form input{
 }
 
 .qrcode > * {
-    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .qrcode > button{
