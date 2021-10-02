@@ -13,7 +13,7 @@ new Vue({
                 </form>
                 <div class="qrcode pt-4" v-if="target">
                     <img :src="generateQRCode" :alt="target" :title="target">
-                    <button type="button" :class="btnColor">Baixar imagem</button>
+                    <button type="button" :class="btnColor" @click="downloadQRCode">Baixar imagem</button>
                 </div>
             </div> 
             <button type="button" :class="btnBorder + ' ' + btnColor" id="btnDarkMode" @click="darkMode"><i :class="btnIcon" aria-hidden="true"></i></button>
@@ -44,6 +44,9 @@ new Vue({
             this.btnBorder == 'border border-dark' ? this.btnBorder = 'border border-light' : this.btnBorder = 'border border-dark';
             this.btnColor == 'btn btn-outline-dark' ? this.btnColor = 'btn btn-outline-light' : this.btnColor = 'btn btn-outline-dark';
             this.btnIcon == 'fa fa-sun-o' ? this.btnIcon = 'fa fa-moon-o' : this.btnIcon = 'fa fa-sun-o';
+        },
+        downloadQRCode(){
+            console.log(this.qrious.toDataURL());
         }
     }
 })
