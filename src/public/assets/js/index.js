@@ -46,7 +46,7 @@ new Vue({
             this.btnIcon == 'fa fa-sun-o' ? this.btnIcon = 'fa fa-moon-o' : this.btnIcon = 'fa fa-sun-o';
         },
         downloadQRCode(){
-            console.log(this.qrious.toDataURL());
+            window.open(this.qrious.toDataURL());
         }
     }
 })
